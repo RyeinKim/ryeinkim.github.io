@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-<img src="D:\onedrive\Desktop\모아놓기\이력서 사진.jpg" style="zoom:25%;" />
+<img src="https://i.ibb.co/bRhN3vS/ryein-photo.jpg" style="zoom:25%;" />
 
 현재 원광대학교 창의공과대학 컴퓨터소프트웨어공학과에 2학년 휴학중인 김례인 입니다.
 
