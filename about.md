@@ -14,5 +14,18 @@ permalink: /about/
 
 
 
-[GitHub](https://github,com/RyeinKim) / [Rocketpunch](https://www.rocketpunch.com/@reign6496) / [Facebook](https://www.facebook.com/india.ryein)
+2019.11 - 원광대 인력개발처, 대학일자리센터 주최 커리어로드맵 경진대회 봉황상 수상
+2019.11 - 원광대 교육혁신센터 주최 WK-마인드 경진대회 장려상 수상
+2019.11 - 원광대 SW Week+ 학생 포트폴리오 경연대회 동상 수상
+2019.11 - 원광대 SW Week+ 창의공학설계 작품 경진대회 동상 수상
+
+
+
+GitHub: [RyeinKim](https://github,com/RyeinKim)
+
+Rocketpunch: [@reign6496](https://www.rocketpunch.com/@reign6496)
+
+Facebook: [@india.ryein](https://www.facebook.com/india.ryein)
+
+Instagram: [@ryein_kim](https://www.instagram.com/ryein_kim/)
 
