@@ -58,31 +58,63 @@ static char query[255];
 > start.c
 
 ```c
-#define _CRT_SECURE_NO_WARNINGS
-#include <mysql.h>
-#include <string.h>
-#include <stdio.h>
+#include "main.h"
+#include "input.h"
+#include "start.h"
+#include "print.h"
+#include "search.h"
+#include "delete.h"
+#include "edit.h"
 
-#pragma once
+int main(void)
+{
+	while (1)
+	{
+		int m;
+		_contact m1;
+		mysql_start();
 
-#define DB_HOST "reignking.cafe24.com"
-#define DB_USER "reignking"
-#define DB_PASS "djaak4250"
-#define DB_NAME "reignking"
-#define CHOP(x) x[strlen(x) - 1] = ' '
+		printf("1. input data  2. print all  3. search  4. delete  5. edit  6. quit\n");
+		printf("type: ");
+		scanf("%d", &m);
+		getchar();
 
-typedef struct {
-	char name[10];
-	char digit[20];
-	char address[256];
-} _contact;
-
-MYSQL_RES   *sql_result;
-MYSQL_ROW   sql_row;
-MYSQL *connection = NULL, conn;
-
-static int query_stat;
-static char query[255];
+		if (m == 6) { break; }
+		switch (m)
+		{
+			case 1:
+			{
+				input_data(&m1);
+				break;
+			}
+			case 2:
+			{
+				print(connection);
+				break;
+			}
+			case 3:
+			{
+				search(connection);
+				break;
+			}
+			case 4:
+			{
+				del_info(connection);
+				break;
+			}
+			case 5:
+			{
+				edit_info(&m1);
+				break;
+			}
+			default:
+			{
+				break;
+			}
+		}
+		mysql_close(connection);
+	}
+}
 ```
 
 이렇게 코어를 미리 짜서 각 팀원들이 볼 수 있도록 깃에 올려뒀고 각각 팀원들은 자신이 맡은 모듈에 대해서 해당 코어를 참고하여 각각 모듈을 제작하였습니다.
