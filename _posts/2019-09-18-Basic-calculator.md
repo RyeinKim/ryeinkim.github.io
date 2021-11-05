@@ -30,8 +30,7 @@ C언어에 관련된 기본적인 내용은 1학년 커리큘럼에 포함되어
 > calc.h
 
 ```c
-#ifndef CALC_DATA_H
-#define CALC_DATA_H
+#ifndef 
 
 typedef struct _CALC_DATA { 
 	int num1;
@@ -49,7 +48,7 @@ void print(CALC_DATA *data);
 
 <br>
 
-> calc.c
+> func_calc.h
 
 ```c
 #include "calc.h"
@@ -82,8 +81,7 @@ void print(CALC_DATA *data)
 > main.c
 
 ```c
-#include "calc.h"
-#include "print.h"
+#include "func_calc.h"
 
 int main()
 {
