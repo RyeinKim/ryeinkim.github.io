@@ -1,103 +1,153 @@
 ---
 layout: post
-title: "친구 파이썬과제 도와주기 Feat. 로또 프로그램"
+title: "Data Structure #1 - Sequential list"
 ---
 
 
 
-Python
+Data Structure
 
 ---
 
-친구가 파이썬 과제가 있는데 코딩하는데 어려움을 겪고 있어서 저도 마침 파이썬을 조금 하고
-있었기에 실력도 늘릴 겸 친구 과제를 도와주었습니다.
+학교에서 자료구조를 배우고 있습니다.
+
+이전에도 배웠던 자료구조이지만 기록을 남겨두면 더 좋을 것 같아 학교에서 배우는 내용을 토대로
+
+소스 파일을 한개씩 남겨보려 합니다.
+
+순차 자료구조에 대해서 배운 후 실습을 진행했는데 다항식의 연산을 구현해내는 프로그램을
+
+개발하는 실습을 진행 하였습니다.
 
 <br>
 
-> 로또 번호 추출 및 당첨 프로그램
+> Sequential_list_SUM.c
 
-이 과제에는 여러가지 조건이 존재 했습니다. 그 중에서 꼭 지켜야하는 조건들 몇개가 있었다면...
+```c
+#include <stdio.h>
+#define MAX(a,b) ((a>b)?a:b)
+#define MAX_DEGREE 50
 
-1. 구매하는 복권의 갯수를 input을 이용해 받아야 함.
-2. 당첨 번호는 그때 그때 바뀌도록 해야 함.
-3. 구매일자를 포함할 시 추가 점수 반영.
+typedef struct {							
+	int degree;							
+	float coef[MAX_DEGREE];			
+} polynomial;
 
-이 두가지 조건을 생각해보면서 당연히 random 함수를 사용 해야겠다고 생각을 했으나..
+polynomial sumPoly(polynomial, polynomial);
+void printPoly(polynomial);
 
-많은 난관에 봉착해서 약 하루 넘게 고민을 하다가 성공 해냈습니다.
+void main() {
+	polynomial A = { 5, { 3, 1, 4, 3, 7, 5 } };			
+	polynomial B = { 2, { 1, 0, 3 } };		
+	
+	polynomial C;
+	C = mulPoly(A, B);		
 
-긴말 없이 소스 올리겠습니다.
+	printf("\n A(x) = "); printPoly(A);			
+	printf("\n B(x) = "); printPoly(B);			
+	printf("\n C(x) = "); printPoly(C);			
 
-<br>
+	getchar();
+}
 
-> lotto.py
+polynomial sumPoly(polynomial A, polynomial B) {
+	polynomial C;			
+	int A_index = 0, B_index = 0, C_index = 0;
+	int A_degree = A.degree, B_degree = B.degree;
+	C.degree = MAX(A.degree, B.degree);
 
-```python
-import random
-import datetime
+	while (A_index <= A.degree && B_index <= B.degree) {
+		if (A_degree > B_degree) {											
+			C.coef[C_index++] = A.coef[A_index++];
+			A_degree--;														
+		}
+		else if (A_degree == B_degree) {
+			C.coef[C_index++] = A.coef[A_index++] + B.coef[B_index++];		
+			A_degree--;
+			B_degree--;
+		}
+		else {
+			C.coef[C_index++] = B.coef[B_index++];
+			B_degree--;
+		}
+	}
+	return C;		
+} 
 
-num_array = [[0 for col in range(6)] for row in range(100)]
+void printPoly(polynomial P) {
+	int i, degree;
+	degree = P.degree;
 
-alist=[]
-win_array=[]
-suc_count = 0
-checklist=[]
-
-def make_num():
-    for i in range(6):
-        a = random.randint(1,45)       
-        while a in alist :             
-            a = random.randint(1,45)
-        alist.append(a)
-
-def make_win_num():
-    for i in range(7):
-        b = random.randint(1,45)       
-        while b in win_array:             
-            b = random.randint(1,45)
-        win_array.append(b) 
-        
-        
-count = int(input("몇장살지: "))
-print()
-
-for i in range(count):
-    for j in range(6):
-        alist=[]
-        make_num()
-        num_array[i][j] = alist[j]
-    print(num_array[i])
-    
-date = datetime.datetime.now()
-print("구매일자")
-print (date.year,'년 ', date.month,'월 ', date.day,' 일', date.hour,'시 ',date.minute,'분 ',date.second,'초')
-print()
-
-make_win_num()
-
-print("당첨숫자")
-print(f'{win_array}')
-print()
-
-for i in range(count):
-    suc_count = 0
-    for j in range(0, 6):
-        if 	num_array[i][j] == win_array[0] or num_array[i][j] == win_array[1] or num_array[i][j] == win_array[2] or num_array[i][j] == win_array[3] or num_array[i][j] == win_array[4] or num_array[i][j] == win_array[5] or num_array[i][j] == win_array[6]:
-            	suc_count = suc_count + 1
-    			checklist.append(suc_count)
-                if suc_count == 6:
-                    print("1등")
-                elif suc_count == 5:
-                    print("2등")
-                elif suc_count == 4:
-                    print("3등")
-                elif suc_count == 3:
-                    print("4등")
-                elif suc_count == 2:
-                    print("5등")
-                elif suc_count == 1:
-                    print("6등")
-                elif suc_count == 0:
-                    print("꼴등")
+	for (i = 0; i <= P.degree; i++) {
+		printf("%3.0fx^%d", P.coef[i], degree--);
+		if (i < P.degree) printf(" +");
+	}
+	printf("\n");
+}
 ```
 
+순차 자료구조를 이용한 덧셈 예제인데 이를 이용해서 다항식의 곱셈을 제작하는 실습을
+
+진행 하였습니다. 다항식의 곱셈에서는 덧셈과는 다르게 for문 사용해서 지수끼리의 덧셈을 진행하고 곱셈을 진행하는 방식으로 실습 하였습니다.
+
+<br>
+
+> Sequential_list_PRODUCT.c
+
+```c
+#include <stdio.h>
+#define MAX_DEGREE 50
+
+typedef struct {						
+	int degree;								
+	float coef[MAX_DEGREE];			
+} polynomial;
+
+polynomial mulPoly(polynomial, polynomial, polynomial);
+void printPoly(polynomial);
+
+void main() {
+	polynomial Ax = { 2, { 3, 1, 0 } };			
+	polynomial Bx = { 3, { 1, 5, 1, 3 } };			
+	polynomial Cx = { 2, { 2, 3, 1 } };				
+	
+	polynomial Dx;
+	Dx = mulPoly(Ax, Bx, Cx);	
+
+	printf("\n A(x) = "); printPoly(Ax);			
+	printf("\n B(x) = "); printPoly(Bx);			
+	printf("\n C(x) = "); printPoly(Cx);			
+	printf("\n D(x) = "); printPoly(Dx);			
+
+	getchar();
+}
+
+polynomial mulPoly(polynomial Ax, polynomial Bx, polynomial Cx) {
+	polynomial Dx;	
+
+	for (int i = 0; i < Ax.degree + Bx.degree + Cx.degree + 1; i++) {		
+		Dx.coef[i] = 0;
+	}
+	Dx.degree = Ax.degree + Bx.degree + Cx.degree;							
+
+	for (int i = 0; i < Ax.degree + 1; i++) {							
+		for (int j = 0; j < Bx.degree + 1; j++) {
+			for (int k = 0; k < Cx.degree + 1; k++) {
+				Dx.coef[i + j + k] += Ax.coef[i] * Bx.coef[j] * Cx.coef[k];
+			}
+		}	
+	}
+	return Dx;		
+}
+
+void printPoly(polynomial P) {
+	int i, degree;
+	degree = P.degree;
+
+	for (i = 0; i <= P.degree; i++) {
+		printf("%3.0fx^%d", P.coef[i], degree--);
+		if (i < P.degree) printf(" +");
+	}
+	printf("\n");
+}
+```
