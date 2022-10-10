@@ -8,15 +8,16 @@ MIPS
 ---
 > final.s
 
-```mips
+```bash
 #프로그램에서 사용할 데이터 영역
-    .data
+.data
 msg: .asciiz "Calculation result: " #출력할 메세지
 number: .word 20 #연산에 사용할 수
 
 #프로그램의 코드영역
-    .text
-    .globl main
+.text
+.globl main
+
 main:
     lw $s0, number #s0레지스터에 20을 가지고 온다.
     li $t0, 4 # 4로 나눗셈 연산을 하기위한 t0 레지스터
