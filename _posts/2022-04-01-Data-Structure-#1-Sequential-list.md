@@ -3,10 +3,6 @@ layout: post
 title: "Data Structure #1 - Sequential list"
 ---
 
-Data Structure
----
----
-
 학교에서 데이터구조를 배우고 있다.<br>
 이전에도 잠깐 배웠던 데이터구조이지만 기록을 남겨두면 더 좋을 것 같아 학교에서 배우는 내용을 토대로
 몇가지 소스 파일을 한개씩 남겨보려 한다.

@@ -3,10 +3,6 @@ layout: post
 title: "Project: Contact (C, MySQL DB, Modular Programming)"
 ---
 
-Project: Contact (C, MySQL DB)
----
----
-
 저번에 만든 DB를 연동한 전화번호부는 프로젝트 결과물로 제출하기에는 턱없이 부족했다.
 <br>그래서 기존 파일 입출력 방식에서 사용한 모듈화 프로그래밍 방식을 추가했고,
 기존에 있었지만 사라졌던 기능들인 <br>

@@ -3,9 +3,6 @@ layout: post
 title: "MIPS Assembly Example"
 ---
 
-MIPS
----
----
 컴퓨터 구조를 배우면서 MIPS Assembly 에 대해 배웠고, 과제를 받았다.
 <br>과제는 MIPS를 사용해서 _**<u>0부터 입력한 수까지 짝수의 곱</u>**_ 을 구하는 과제였다.
 <br>주석을 포함할 경우 가산점이 높았기 때문에 주석을 포함하여 제출하였다.

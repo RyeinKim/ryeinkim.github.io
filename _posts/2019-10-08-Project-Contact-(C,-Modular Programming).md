@@ -3,10 +3,6 @@ layout: post
 title: "Project: Contact (C, Modular Programming)"
 ---
 
-Project: Contact (C, Modular Programming)
----
----
-
 저번 글에서 만들었던 파일 입출력을 이용한 전화번호부에 이전에
 계산기 예제를 이용해 가르쳤던 모듈화 프로그래밍을 적용 했다.
 

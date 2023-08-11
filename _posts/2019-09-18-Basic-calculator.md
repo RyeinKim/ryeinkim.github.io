@@ -3,10 +3,6 @@ layout: post
 title: "Basic Calculator (C, Modular Programming)"
 ---
 
-Basic Calculator (C, Modular Programming)
----
----
-
 원광대학교 중앙동아리 학술분과 소속 ENIAC 에서 진행한 스터디 프로젝트 입니다.<br>
 1학년 대상 C언어 스터디 팀을 구성하고 팀장을 맡아 팀원들에게 C언어를 가르쳐 주는 시간을 가졌습니다.<br>
 컴퓨터 학과라고는 하지만 1학년이고, 사실 C언어도 모르는 상태로 왔지만 개발이 해보고 싶은 학생들은

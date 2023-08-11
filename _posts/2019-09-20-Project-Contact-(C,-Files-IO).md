@@ -3,10 +3,6 @@ layout: post
 title: "Project: Contact (C, Files I/O)"
 ---
 
-Project: Contact (C, Files I/O)
----
----
-
 저번 글에 설명했던 것처럼 스터디 프로젝트 팀장을 맡고 있었는데, 
 최종적인 결과물을 보여줄 수 있는 프로젝트를 한가지 진행해야 했다.
 어떤 주제로 프로젝트를 기획해야 C언어를 잘 활용하고 의미가 있을까 생각하던 중
