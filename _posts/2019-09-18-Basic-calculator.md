@@ -69,7 +69,7 @@ void print(CALC_DATA *data)
 
 <br>
 
-> main.c
+>main.c
 ```c
 #include "func_calc.h"
 
