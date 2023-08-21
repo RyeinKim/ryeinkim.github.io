@@ -13,6 +13,7 @@ Who's Wayne
 Interest
 ---
 - Express js
+- Nest js
 - Java Spring
 - Database
 <br>
@@ -29,7 +30,7 @@ Awards
     - 원광대학교 SW중심대학사업단
 * 2019.11 | WK-마인드 포트폴리오 경진대회 장려상
     * 원광대학교 교육혁신센터
-- 2019.11 | SW 학생 포트폴리오 경지낻회 동상
+- 2019.11 | SW 학생 포트폴리오 경진대회 동상
     - 원광대학교 SW중심대학사업단
 
 <br>
