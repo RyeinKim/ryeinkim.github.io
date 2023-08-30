@@ -7,7 +7,7 @@ permalink: /about/
 Who's Wayne
 ---
 - 원광대학교 컴퓨터소프트웨어공학과 3학년 재학중]
-- [Wanye에 대해 더 자세히 알아보기](https://ryeinkim.github.io/2019/01/01/About-Wayne-(Detail-ver.).html)
+- [Wayne에 대해 더 자세히 알아보기](https://ryeinkim.github.io/2019/01/01/About-Wayne-(Detail-ver.).html)
 <br>
 
 Interest
